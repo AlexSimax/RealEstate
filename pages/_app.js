@@ -2,7 +2,16 @@ import Router from 'next/router'
 import Head from 'next/head'
 import NProgress from 'nprogress'
 import { ChakraProvider } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 import Layout from '../comps/Layout'
+
+const theme = extendTheme({
+  colors: {
+    brandOrange: {
+      100: '#f56c0e ',
+    },
+  },
+})
 
 function MyApp({ Component, pageProps }) {
   Router.events.on('routeChangeStart', () => {
@@ -24,7 +33,7 @@ function MyApp({ Component, pageProps }) {
           referrerPolicy='no-referrer'
         />
       </Head>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

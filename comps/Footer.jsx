@@ -9,7 +9,7 @@ const Footer = () => (
         <p>Copyright 2017 - {new Date().getFullYear()}, QWERTY</p>
       </Box>
       {/* <Spacer /> */}
-      <Text color='orange.400' fontSize='2xl'>
+      <Text color='brandOrange.100' fontSize='2xl'>
         {/* <Flex> */}
         {/* <FiPhone /> <FaWhatsapp /> */}
         +90 (542) 874-10-47

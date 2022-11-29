@@ -15,7 +15,7 @@ import { FiKey } from 'react-icons/fi'
 
 const Navbar = () => (
   <Flex p='2' borderBottom='1px' borderColor='gray.100'>
-    <Box fontSize='3xl' color='orange.400' fontWeight='bold'>
+    <Box fontSize='3xl' color='brandOrange.100' fontWeight='bold'>
       <Link href='/' paddingLeft='2'>
         QWERTY
       </Link>
