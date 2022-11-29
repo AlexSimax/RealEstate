@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import Logo from '../src/img/LOGO.svg'
 import {
   Menu,
   MenuButton,
@@ -15,9 +17,14 @@ import { FiKey } from 'react-icons/fi'
 
 const Navbar = () => (
   <Flex p='2' borderBottom='1px' borderColor='gray.100'>
-    <Box fontSize='3xl' color='brandOrange.100' fontWeight='bold'>
+    <Box
+      fontSize='3xl'
+      color='brandOrange.100'
+      fontWeight='bold'
+      cursor='pointer'
+    >
       <Link href='/' paddingLeft='2'>
-        QWERTY
+        <Image cursor='pointer' src={Logo} alt='logo_RealEstate'></Image>
       </Link>
     </Box>
     <Spacer />

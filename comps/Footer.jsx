@@ -4,23 +4,25 @@ import { FiMail, FiPhone } from 'react-icons/fi'
 
 const Footer = () => (
   <Box marginTop='20px' borderTop='1px' borderColor='gray.100'>
-    <Flex alignItems='center' justifyContent='space-around'>
+    <Flex alignItems='center' justifyContent='space-around' flexWrap='wrap'>
       <Box textAlign='center' p='5' color='gray.600'>
         <p>Copyright 2017 - {new Date().getFullYear()}, QWERTY</p>
       </Box>
-      {/* <Spacer /> */}
-      <Text color='brandOrange.100' fontSize='2xl'>
-        {/* <Flex> */}
-        {/* <FiPhone /> <FaWhatsapp /> */}
-        +90 (542) 874-10-47
-        {/* </Flex> */}
-      </Text>
-      <Text color='gray.600'>
-        {/* <Flex>
-        <FiMail color='gray.400' /> */}
+      <Flex>
+        <Box color='gray.600' paddingTop={1} paddingRight={3}>
+          <FiPhone />
+        </Box>
+        <Box paddingTop={1} paddingRight={3}>
+          <FaWhatsapp color='#7ad06d' />
+        </Box>
+        <Box color='brandOrange.100'>+90 (542) 874-10-47</Box>
+      </Flex>
+      <Flex color='gray.600'>
+        <Box color='gray.600' paddingTop={1} paddingRight={3}>
+          <FiMail color='gray.400' />
+        </Box>
         qwertyrealestate@gmail.com
-        {/* </Flex> */}
-      </Text>
+      </Flex>
     </Flex>
   </Box>
 )
