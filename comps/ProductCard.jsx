@@ -1,12 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Box, Flex, Text, Avatar } from '@chakra-ui/react'
+import { Box, Flex, Text, Avatar, Hover } from '@chakra-ui/react'
 import { FaBed, FaBath } from 'react-icons/fa'
 import { BsGridFill } from 'react-icons/bs'
 import { GoVerified } from 'react-icons/go'
 import millify from 'millify'
-
-
 
 function ProductCard({ product }) {
   const {
@@ -29,7 +27,7 @@ function ProductCard({ product }) {
         justifyContent='flex-start'
         cursor='pointer'
       >
-        <Box>
+        <Box transition='all 0.5s' _hover={{ transform: 'scale(1.05)' }}>
           <Image
             src={'https:' + thumbnail.fields.file.url}
             width={thumbnail.fields.file.details.image.width}

@@ -41,11 +41,14 @@ const Navbar = () => (
           <Link href='/' passHref>
             <MenuItem icon={<FcHome />}>На главную</MenuItem>
           </Link>
-          <Link href='/search' passHref>
-            <MenuItem icon={<BsSearch />}>Поиск</MenuItem>
+          <Link href='/searchBuy' passHref>
+            <MenuItem icon={<BsSearch />}>Поиск, Купить</MenuItem>
+          </Link>
+          <Link href='/searchRent' passHref>
+            <MenuItem icon={<BsSearch />}>Поиск, Арендовать</MenuItem>
           </Link>
           <Link href='/about' passHref>
-            <MenuItem icon={<FiKey />}>Как купить</MenuItem>
+            <MenuItem icon={<FcAbout />}>О нас</MenuItem>
           </Link>
         </MenuList>
       </Menu>

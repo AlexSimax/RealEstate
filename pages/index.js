@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import BannerPicture from '../src/img/banner_image.jpg'
-import { Flex, Box, Text, Button } from '@chakra-ui/react'
+import { Flex, Box, Text, Button, Hover } from '@chakra-ui/react'
 // import { Property } from '../comps/Property'
 import ProductCard from '../comps/ProductCard'
 import { createClient } from 'contentful'
@@ -15,8 +15,10 @@ const Banner = ({
   title2,
   desc1,
   desc2,
-  buttonText,
-  linkName,
+  buttonText1,
+  linkName1,
+  buttonText2,
+  linkName2,
 }) => (
   <Flex flexWrap='wrap' justifyContent='center' alignItems='center' m='10'>
     <Image src={imageUrl} width={500} height={300} alt='banner' />
@@ -34,8 +36,24 @@ const Banner = ({
         <br />
         {desc2}
       </Text>
-      <Button fontSize='x1' bg='blue.400' color='white'>
-        <Link href={linkName}>{buttonText}</Link>
+      <Button
+        fontSize='x1'
+        bg='blue.400'
+        color='white'
+        transition='all 0.5s'
+        _hover={{ bg: '#f56c0e ' }}
+      >
+        <Link href={linkName1}>{buttonText1}</Link>
+      </Button>
+      <Button
+        fontSize='x1'
+        bg='blue.400'
+        color='white'
+        marginLeft='15px'
+        transition='all 0.5s'
+        _hover={{ bg: '#f56c0e' }}
+      >
+        <Link href={linkName2}>{buttonText2}</Link>
       </Button>
     </Box>
   </Flex>
@@ -63,13 +81,15 @@ export default function Home({ products }) {
   return (
     <Box>
       <Banner
-        purpose='КУПИТЬ НЕДВИЖИМОСТЬ'
-        title1='Найти, Купить и владеть'
+        purpose='КУПИТЬ ИЛИ АРЕНДОВАТЬ НЕДВИЖИМОСТЬ'
+        title1='Найти, Купить и Владеть'
         title2='Своим Домом Мечты'
-        desc1='Смотреть Квартиры, Дома'
+        desc1='Смотреть квартиры, дома'
         desc2='и другое'
-        buttonText='Поиск'
-        linkName='/search'
+        buttonText1='Купить'
+        linkName1='/searchBuy'
+        buttonText2='Арендовать'
+        linkName2='/searchRent'
         imageUrl={BannerPicture}
       />
       <Flex flexWrap='wrap'>

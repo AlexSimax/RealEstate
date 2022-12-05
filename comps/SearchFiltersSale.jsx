@@ -12,10 +12,10 @@ import {
 import router, { useRouter } from 'next/router'
 import { MdCancel } from 'react-icons/md'
 import Image from 'next/image'
-import { filterData, getFilterValues } from '../utils/filterData'
+import { filterDataSale, getFilterValues } from '../utils/filterDataSale'
 
 const SearchFilters = () => {
-  const [filters, setFilters] = useState(filterData)
+  const [filters, setFilters] = useState(filterDataSale)
 
   const searchProperties = (filterValues) => {
     const path = router.pathname

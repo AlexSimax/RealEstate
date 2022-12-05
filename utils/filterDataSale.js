@@ -1,4 +1,4 @@
-export const filterData = [
+export const filterDataSale = [
   {
     items: [
       { name: '10,000', value: '10000' },
@@ -7,7 +7,7 @@ export const filterData = [
       { name: '200,000', value: '200000' },
       { name: '300,000', value: '300000' },
     ],
-    placeholder: 'Min Price (£)',
+    placeholder: 'Мин. цена (£)',
     queryName: 'minPrice',
   },
   {
@@ -20,7 +20,7 @@ export const filterData = [
       { name: '500,000', value: '500000' },
       { name: '1000,000', value: '1000000' },
     ],
-    placeholder: 'Max Price (£)',
+    placeholder: 'Макс. цена (£)',
     queryName: 'maxPrice',
   },
   {
@@ -32,7 +32,7 @@ export const filterData = [
       { name: '5', value: '5' },
       { name: '6', value: '6' },
     ],
-    placeholder: 'Beds',
+    placeholder: 'Спальня',
     queryName: 'bedsMin',
   },
   {
@@ -42,17 +42,17 @@ export const filterData = [
       { name: '3', value: '3' },
       { name: '4', value: '4' },
     ],
-    placeholder: 'Baths',
+    placeholder: 'Санузел',
     queryName: 'bathsMin',
   },
   {
     items: [
-      { name: 'Lowest Price', value: 'fields.price' },
-      { name: 'Highest Price', value: '-fields.price' },
-      { name: 'Newest', value: '-sys.updatedAt' },
-      { name: 'Oldest', value: 'sys.updatedAt' },
+      { name: 'Дешёвые', value: 'fields.price' },
+      { name: 'Дорогие', value: '-fields.price' },
+      { name: 'Новые', value: '-sys.updatedAt' },
+      { name: 'Старые', value: 'sys.updatedAt' },
     ],
-    placeholder: 'Sort',
+    placeholder: 'Сортировка',
     queryName: 'sort',
   },
 ]

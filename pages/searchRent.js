@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Flex, Box, Text, Icon } from '@chakra-ui/react'
 import { BsFilter } from 'react-icons/bs'
-import SearchFilters from '../comps/SearchFilters'
+import SearchFilters from '../comps/SearchFiltersRent'
 import ProductCard from '../comps/ProductCard'
 import noresult from '../src/img/noresult.svg'
 import { createClient } from 'contentful'
@@ -26,12 +26,12 @@ const Search = ({ products }) => {
         alignItems='center'
         onClick={() => setSearchFilters((prevFilters) => !prevFilters)}
       >
-        <Text>Поиск дома по параметрам</Text>
+        <Text>Поиск аренды по параметрам</Text>
         <Icon paddingLeft='2' w='7' as={BsFilter}></Icon>
       </Flex>
       {searchFilters && <SearchFilters />}
       <Text fontSize='2xl' p='4' fontWeight='bold'>
-        Products{' '}
+        {' '}
       </Text>
       <Flex flexWrap='wrap'>
         {products.map((product) => (
@@ -74,7 +74,7 @@ export async function getServerSideProps({ query }) {
   //   `${baseUrl}/properties/list?bathsMin=${bathsMin}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`
   // )
   const res = await client.getEntries({
-    content_type: 'product',
+    content_type: 'reRent',
     'fields.price[gte]': minPrice,
     'fields.price[lte]': maxPrice,
     'fields.beds[gte]': bedsMin,
