@@ -15,8 +15,10 @@ function ProductCard({ product }) {
     beds,
     bathrooms,
     area,
+    rent,
     isVerified = true,
   } = product.fields
+  const rentPay = '/ в мес.'
   return (
     <Link href={'/products/' + slug} passHref>
       <Flex
@@ -46,7 +48,7 @@ function ProductCard({ product }) {
                 {isVerified && <GoVerified />}
               </Box>
               <Text fontWeight='bold' fontSize='lg'>
-                £ {price}
+                £ {rent === false ? price : price + ' ' + rentPay}
               </Text>
             </Flex>
           </Flex>

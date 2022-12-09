@@ -9,7 +9,6 @@ import noresult from '../src/img/noresult.svg'
 import { createClient } from 'contentful'
 
 const Search = ({ products }) => {
-  // console.log(query)
   const [searchFilters, setSearchFilters] = useState(false)
   const router = useRouter()
   return (
@@ -26,7 +25,7 @@ const Search = ({ products }) => {
         alignItems='center'
         onClick={() => setSearchFilters((prevFilters) => !prevFilters)}
       >
-        <Text>Поиск дома по параметрам</Text>
+        <Text>Поиск по параметрам</Text>
         <Icon paddingLeft='2' w='7' as={BsFilter}></Icon>
       </Flex>
       {searchFilters && <SearchFilters />}
@@ -63,6 +62,7 @@ export async function getServerSideProps({ query }) {
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   })
+  const purpose = query.purpose || 'for-sale'
   const minPrice = query.minPrice || 0
   const maxPrice = query.maxPrice || 10000000000
   const bedsMin = query.bedsMin || 0
@@ -70,15 +70,13 @@ export async function getServerSideProps({ query }) {
   const sort = query.sort || '-sys.updatedAt'
   const areaMax = query.areaMax || 10000000000
 
-  // const data = await fetchApi(
-  //   `${baseUrl}/properties/list?bathsMin=${bathsMin}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`
-  // )
   const res = await client.getEntries({
     content_type: 'product',
     'fields.price[gte]': minPrice,
     'fields.price[lte]': maxPrice,
     'fields.beds[gte]': bedsMin,
     'fields.bathrooms[gte]': bathsMin,
+    'fields.rent': purpose === 'for-sale' ? false : true,
     order: sort,
   })
 

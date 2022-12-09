@@ -44,7 +44,8 @@ export default function ImageSrollbar({ data }) {
     >
       {data.map((item) => (
         <Box
-          width='910px'
+          width={['300px', '500px', '910px']}
+          // width='910px'
           itemId={item.id}
           key={item.id}
           overflow='hidden'

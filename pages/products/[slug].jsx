@@ -50,8 +50,10 @@ const ProductDetails = ({ product }) => {
     price,
     area,
     description,
+    rent,
     isVerified = true,
   } = product.fields
+  const rentPay = '/ в мес.'
   return (
     <Box maxWidth='1000px' margin='auto' p='4'>
       {featuredImage && <ImageSrollbar data={featuredImage} />}
@@ -62,7 +64,7 @@ const ProductDetails = ({ product }) => {
               {isVerified && <GoVerified />}
             </Box>
             <Text fontWeight='bold' fontSize='lg'>
-              £ {price}
+              £ {rent === false ? price : price + ' ' + rentPay}
             </Text>
           </Flex>
         </Flex>
@@ -83,10 +85,15 @@ const ProductDetails = ({ product }) => {
           <BsGridFill />
         </Flex>
         <Box marginTop='2'>
-          <Text fontSize='lg' marginBottom='2' fontWeight='bold'>
+          <Text fontSize={['md', 'lg']} marginBottom='2' fontWeight='bold'>
             {title}
           </Text>
-          <Text className='desc' lineHeight='2' color='gray.600'>
+          <Text
+            className='desc'
+            lineHeight='2'
+            color='gray.600'
+            fontSize={['sm', 'md', 'lg']}
+          >
             {documentToReactComponents(description)}
           </Text>
           <style jsx>

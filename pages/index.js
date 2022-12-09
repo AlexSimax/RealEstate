@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import BannerPicture from '../src/img/banner_image.jpg'
 import { Flex, Box, Text, Button, Hover } from '@chakra-ui/react'
-// import { Property } from '../comps/Property'
 import ProductCard from '../comps/ProductCard'
 import { createClient } from 'contentful'
 
@@ -17,8 +16,8 @@ const Banner = ({
   desc2,
   buttonText1,
   linkName1,
-  buttonText2,
-  linkName2,
+  // buttonText2,
+  // linkName2,
 }) => (
   <Flex flexWrap='wrap' justifyContent='center' alignItems='center' m='10'>
     <Image src={imageUrl} width={500} height={300} alt='banner' />
@@ -45,7 +44,7 @@ const Banner = ({
       >
         <Link href={linkName1}>{buttonText1}</Link>
       </Button>
-      <Button
+      {/* <Button
         fontSize='x1'
         bg='blue.400'
         color='white'
@@ -54,7 +53,7 @@ const Banner = ({
         _hover={{ bg: '#f56c0e' }}
       >
         <Link href={linkName2}>{buttonText2}</Link>
-      </Button>
+      </Button> */}
     </Box>
   </Flex>
 )
@@ -77,19 +76,18 @@ export async function getStaticProps() {
 }
 
 export default function Home({ products }) {
-  // console.log(products)
   return (
     <Box>
       <Banner
         purpose='КУПИТЬ ИЛИ АРЕНДОВАТЬ НЕДВИЖИМОСТЬ'
-        title1='Найти, Купить и Владеть'
-        title2='Своим Домом Мечты'
+        title1='в Северном Кипре'
+        // title2='Владеть Своим Домом Мечты'
         desc1='Смотреть квартиры, дома'
         desc2='и другое'
-        buttonText1='Купить'
+        buttonText1='Поиск'
         linkName1='/searchBuy'
-        buttonText2='Арендовать'
-        linkName2='/searchRent'
+        // buttonText2='Арендовать'
+        // linkName2='/searchRent'
         imageUrl={BannerPicture}
       />
       <Flex flexWrap='wrap'>

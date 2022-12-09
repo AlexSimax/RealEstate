@@ -5,8 +5,8 @@ import { FiMail, FiPhone } from 'react-icons/fi'
 const Footer = () => (
   <Box marginTop='20px' borderTop='1px' borderColor='gray.100'>
     <Flex alignItems='center' justifyContent='space-around' flexWrap='wrap'>
-      <Box textAlign='center' p='5' color='gray.600'>
-        <p>Copyright 2017 - {new Date().getFullYear()}, QWERTY</p>
+      <Box textAlign='center' p='5' color='gray.600' fontSize='xs'>
+        <p>Copyright {new Date().getFullYear()}, QWERTY</p>
       </Box>
       <Flex>
         <Box color='gray.600' paddingTop={1} paddingRight={3}>
@@ -15,7 +15,7 @@ const Footer = () => (
         <Box paddingTop={1} paddingRight={3}>
           <FaWhatsapp color='#7ad06d' />
         </Box>
-        <Box color='brandOrange.100'>+90 (542) 874-10-47</Box>
+        <Box color='brandOrange.100'>+90 (542) 874 1047</Box>
       </Flex>
       <Flex color='gray.600'>
         <Box color='gray.600' paddingTop={1} paddingRight={3}>

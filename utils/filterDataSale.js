@@ -1,6 +1,15 @@
 export const filterDataSale = [
   {
     items: [
+      { name: 'Покупка', value: 'for-sale' },
+      { name: 'Аренда', value: 'for-rent' },
+    ],
+    placeholder: 'Цель',
+    queryName: 'purpose',
+  },
+  {
+    items: [
+      { name: '0', value: '0' },
       { name: '10,000', value: '10000' },
       { name: '50,000', value: '50000' },
       { name: '100,000', value: '100000' },
@@ -58,9 +67,13 @@ export const filterDataSale = [
 ]
 
 export const getFilterValues = (filterValues) => {
-  const { minPrice, maxPrice, bedsMin, bathsMin, sort } = filterValues
+  const { purpose, minPrice, maxPrice, bedsMin, bathsMin, sort } = filterValues
 
   const values = [
+    {
+      name: 'purpose',
+      value: purpose,
+    },
     {
       name: 'minPrice',
       value: minPrice,
