@@ -58,7 +58,7 @@ const Banner = ({
   </Flex>
 )
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
@@ -74,6 +74,22 @@ export async function getStaticProps() {
     },
   }
 }
+// export async function getStaticProps() {
+//   const client = createClient({
+//     space: process.env.CONTENTFUL_SPACE_ID,
+//     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+//   })
+
+//   const res = await client.getEntries({
+//     content_type: 'product',
+//   })
+
+//   return {
+//     props: {
+//       products: res.items,
+//     },
+//   }
+// }
 
 export default function Home({ products }) {
   return (
