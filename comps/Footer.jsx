@@ -15,7 +15,7 @@ const Footer = () => (
         <Box paddingTop={1} paddingRight={3}>
           <FaWhatsapp color='#7ad06d' />
         </Box>
-        <Box color='brandOrange.100'>+90 (542) 874 1047</Box>
+        <Box color='brandOrange.100'>+90 (533) 877 6057</Box>
       </Flex>
       <Flex color='gray.600'>
         <Box color='gray.600' paddingTop={1} paddingRight={3}>
