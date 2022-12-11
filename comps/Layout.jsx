@@ -9,14 +9,18 @@ export default function Layout({ children }) {
       <Head>
         <title>Qwerty Real Estate</title>
       </Head>
-      <Box maxWidth='1280px' m='auto'>
-        <header>
-          <Navbar />
-        </header>
-        <main>{children}</main>
-        <footer>
-          <Footer />
-        </footer>
+      <Box m='auto'>
+        <Box maxWidth='1920px' m='auto'>
+          <header>
+            <Navbar />
+          </header>
+        </Box>
+        <Box maxWidth='1280px' m='auto'>
+          <main>{children}</main>
+          <footer>
+            <Footer />
+          </footer>
+        </Box>
       </Box>
     </>
   )
