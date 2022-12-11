@@ -54,6 +54,7 @@ const ProductDetails = ({ product }) => {
     isVerified = true,
   } = product.fields
   const rentPay = '/ в мес.'
+  const priceRu = new Intl.NumberFormat('ru').format(price)
   return (
     <Box maxWidth='1000px' margin='auto' p='4'>
       {featuredImage && <ImageSrollbar data={featuredImage} />}
@@ -64,7 +65,7 @@ const ProductDetails = ({ product }) => {
               {isVerified && <GoVerified />}
             </Box>
             <Text fontWeight='bold' fontSize='lg'>
-              £ {rent === false ? price : price + ' ' + rentPay}
+              £ {rent === false ? priceRu : priceRu + ' ' + rentPay}
             </Text>
           </Flex>
         </Flex>

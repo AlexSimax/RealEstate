@@ -19,6 +19,7 @@ function ProductCard({ product }) {
     isVerified = true,
   } = product.fields
   const rentPay = '/ в мес.'
+  const priceRu = new Intl.NumberFormat('ru').format(price)
   return (
     <Link href={'/products/' + slug} passHref>
       <Flex
@@ -34,6 +35,7 @@ function ProductCard({ product }) {
             src={'https:' + thumbnail.fields.file.url}
             width={thumbnail.fields.file.details.image.width}
             height={thumbnail.fields.file.details.image.height}
+            // layout='fill'
             alt='real-estate'
           />
         </Box>
@@ -48,7 +50,7 @@ function ProductCard({ product }) {
                 {isVerified && <GoVerified />}
               </Box>
               <Text fontWeight='bold' fontSize='lg'>
-                £ {rent === false ? price : price + ' ' + rentPay}
+                £ {rent === false ? priceRu : priceRu + ' ' + rentPay}
               </Text>
             </Flex>
           </Flex>
