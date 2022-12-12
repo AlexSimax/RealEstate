@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Flex, Box, Text, List, ListItem, ListIcon } from '@chakra-ui/react'
 import Image from 'next/image'
 import aboutPicture from '../src/img/Home-key.jpg'
@@ -77,27 +78,111 @@ const About = () => {
         </Text>
         <List fontSize={['12px', '12px', '2xl']}>
           <ListItem marginBottom='3'>
-            <ListIcon as={FiPhone} color='gray.600' />
-            <ListIcon as={FaWhatsapp} color='#7ad06d' />
-            <ListIcon as={FaTelegram} color='#2fa7de' />
+            <Link href='tel:+905338724681'>
+              <ListIcon
+                as={FiPhone}
+                color='gray.600'
+                fontSize={['18px', '18px', '2xl']}
+                cursor='pointer'
+              />
+            </Link>
+            <Link href='https://wa.me/+905338724681'>
+              <ListIcon
+                as={FaWhatsapp}
+                color='#7ad06d'
+                cursor='pointer'
+                fontSize={['18px', '18px', '2xl']}
+              />
+            </Link>
+            <Link href='tg://resolve?domain=sofya527'>
+              <ListIcon
+                as={FaTelegram}
+                color='#2fa7de'
+                cursor='pointer'
+                fontSize={['18px', '18px', '2xl']}
+              />
+            </Link>
             +90 (533) 872 4681 Софья
           </ListItem>
           <ListItem marginBottom='3'>
-            <ListIcon as={FiPhone} color='gray.600' />
-            <ListIcon as={FaWhatsapp} color='#7ad06d' />
-            <ListIcon as={FaTelegram} color='#2fa7de' />
+            <Link href='tel:+905338483837'>
+              <ListIcon
+                as={FiPhone}
+                color='gray.600'
+                fontSize={['18px', '18px', '2xl']}
+                cursor='pointer'
+              />
+            </Link>
+            <Link href='https://wa.me/+905338483837'>
+              <ListIcon
+                as={FaWhatsapp}
+                color='#7ad06d'
+                cursor='pointer'
+                fontSize={['18px', '18px', '2xl']}
+              />
+            </Link>
+            <Link href='tg://resolve?domain=qwertyrusosp'>
+              <ListIcon
+                as={FaTelegram}
+                color='#2fa7de'
+                cursor='pointer'
+                fontSize={['18px', '18px', '2xl']}
+              />
+            </Link>
             +90 (533) 848 3837 Руслан
           </ListItem>
           <ListItem marginBottom='3'>
-            <ListIcon as={FiPhone} color='gray.600' />
-            <ListIcon as={FaWhatsapp} color='#7ad06d' />
-            <ListIcon as={FaTelegram} color='#2fa7de' />
+            <Link href='tel:+905428471047'>
+              <ListIcon
+                as={FiPhone}
+                color='gray.600'
+                fontSize={['18px', '18px', '2xl']}
+                cursor='pointer'
+              />
+            </Link>
+            <Link href='https://wa.me/+905428471047'>
+              <ListIcon
+                as={FaWhatsapp}
+                color='#7ad06d'
+                cursor='pointer'
+                fontSize={['18px', '18px', '2xl']}
+              />
+            </Link>
+            <Link href='tg://resolve?domain=ravolux '>
+              <ListIcon
+                as={FaTelegram}
+                color='#2fa7de'
+                cursor='pointer'
+                fontSize={['18px', '18px', '2xl']}
+              />
+            </Link>
             +90 (542) 847 1047 Владислав
           </ListItem>
           <ListItem marginBottom='3'>
-            <ListIcon as={FiPhone} color='gray.600' />
-            <ListIcon as={FaWhatsapp} color='#7ad06d' />
-            <ListIcon as={FaTelegram} color='#2fa7de' />
+            <Link href='tel:+905338776057'>
+              <ListIcon
+                as={FiPhone}
+                color='gray.600'
+                fontSize={['18px', '18px', '2xl']}
+                cursor='pointer'
+              />
+            </Link>
+            <Link href='https://wa.me/+905338776057'>
+              <ListIcon
+                as={FaWhatsapp}
+                color='#7ad06d'
+                cursor='pointer'
+                fontSize={['18px', '18px', '2xl']}
+              />
+            </Link>
+            <Link href='tg://resolve?domain=ErsLin'>
+              <ListIcon
+                as={FaTelegram}
+                color='#2fa7de'
+                cursor='pointer'
+                fontSize={['18px', '18px', '2xl']}
+              />
+            </Link>
             +90 (533) 877 6057 Эрсан
           </ListItem>
         </List>

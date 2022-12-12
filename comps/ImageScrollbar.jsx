@@ -56,8 +56,8 @@ export default function ImageSrollbar({ data }) {
             blurDataURL={'https:' + item.fields.file.url}
             src={'https:' + item.fields.file.url}
             alt='home'
-            width={1000}
-            height={500}
+            width={1024}
+            height={768}
             sizes='(max-width: 500px) 100px, (max-width: 1023px) 400px, 1000px'
           />
         </Box>
