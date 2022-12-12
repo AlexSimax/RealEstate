@@ -46,15 +46,15 @@ export default function ImageSrollbar({ data }) {
         <Box
           width={['300px', '500px', '910px']}
           // width='910px'
-          itemId={item.id}
+          itemID={item.id}
           key={item.id}
           overflow='hidden'
           p='1'
         >
           <Image
             placeholder='blur'
-            blurDataURL={'https://' + item.fields.file.url}
-            src={'https://' + item.fields.file.url}
+            blurDataURL={'https:' + item.fields.file.url}
+            src={'https:' + item.fields.file.url}
             alt='home'
             width={1000}
             height={500}

@@ -10,6 +10,7 @@ export default function Layout({ children }) {
         <title>Qwerty Real Estate</title>
       </Head>
       <Box m='auto'>
+        {/* <Box maxWidth='1280px' m='auto'> */}
         <Box maxWidth='1920px' m='auto'>
           <header>
             <Navbar />

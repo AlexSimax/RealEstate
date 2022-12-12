@@ -92,6 +92,7 @@ export async function getServerSideProps() {
 // }
 
 export default function Home({ products }) {
+  // console.log(products)
   return (
     <Box>
       <Banner
