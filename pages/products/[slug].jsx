@@ -26,7 +26,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
@@ -48,11 +48,12 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { product: items[0] },
-    revalidate: 100
+    revalidate: 100,
   }
 }
 
 const ProductDetails = ({ product }) => {
+  if (!product) return <div>Загрузка контента ...</div>
   const {
     title,
     featuredImage,
