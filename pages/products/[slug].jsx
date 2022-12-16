@@ -46,10 +46,18 @@ export async function getStaticProps({ params }) {
     'fields.slug': params.slug,
   })
 
-  return {
-    props: { product: items[0] },
-    revalidate: 100,
+  if (!items.length) {
+    return {
+      redirect : {
+        destination: '/',
+        permanent: false
+      }
+    }
   }
+    return {
+      props: { product: items[0] },
+      revalidate: 100,
+    }
 }
 
 const ProductDetails = ({ product }) => {
