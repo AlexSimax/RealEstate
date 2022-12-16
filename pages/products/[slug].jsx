@@ -30,6 +30,16 @@ export const getStaticPaths = async () => {
   }
 }
 
+// export async function getServerSideProps({ params }) {
+//   const { items } = await client.getEntries({
+//     content_type: 'product',
+//     'fields.slug': params.slug,
+//   })
+
+//   return {
+//     props: { product: items[0] },
+//   }
+// }
 export async function getStaticProps({ params }) {
   const { items } = await client.getEntries({
     content_type: 'product',
@@ -38,6 +48,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { product: items[0] },
+    revalidate: 100
   }
 }
 
@@ -99,8 +110,15 @@ const ProductDetails = ({ product }) => {
           </Text>
           <style jsx>
             {`
+              h2,
+              h3 {
+                text-transform: uppercase;
+              }
               .desc ul {
                 margin: 10px 0 10px 15px;
+              }
+              .desc li {
+                margin-left: 10px;
               }
             `}
           </style>
