@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import BannerPicture from '../src/img/banner_image.jpg'
-import { Flex, Box, Text, Button, Hover } from '@chakra-ui/react'
+import { Flex, Box, Text, Button } from '@chakra-ui/react'
 import ProductCard from '../comps/ProductCard'
 import { createClient } from 'contentful'
 
@@ -90,7 +90,7 @@ export async function getStaticProps() {
   return {
     props: {
       products: res.items,
-      revalidate: 100, // in seconds
+      revalidate: 1, // in seconds
     },
   }
 }

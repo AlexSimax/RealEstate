@@ -1,11 +1,9 @@
 import { createClient } from 'contentful'
-import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { Box, Flex, Text, Spacer, Avatar } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import { FaBed, FaBath } from 'react-icons/fa'
 import { BsGridFill } from 'react-icons/bs'
 import { GoVerified } from 'react-icons/go'
-import millify from 'millify'
 import ImageSrollbar from '../../comps/ImageScrollbar'
 
 const client = createClient({
@@ -48,16 +46,16 @@ export async function getStaticProps({ params }) {
 
   if (!items.length) {
     return {
-      redirect : {
+      redirect: {
         destination: '/',
-        permanent: false
-      }
+        permanent: false,
+      },
     }
   }
-    return {
-      props: { product: items[0] },
-      revalidate: 100,
-    }
+  return {
+    props: { product: items[0] },
+    revalidate: 1,
+  }
 }
 
 const ProductDetails = ({ product }) => {

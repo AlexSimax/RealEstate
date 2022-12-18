@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from '../src/img/LOGO.svg'
 import LogoForBlack from '../src/img/LogoForBlack.svg'
 import {
   Menu,
@@ -14,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { FcMenu, FcHome, FcAbout } from 'react-icons/fc'
 import { BsSearch } from 'react-icons/bs'
-import { FiKey } from 'react-icons/fi'
+// import { FiKey } from 'react-icons/fi'
 
 const Navbar = () => (
   <Flex pt='3' pl='2' borderColor='gray.100' bg='#000000'>

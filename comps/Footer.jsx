@@ -1,5 +1,5 @@
-import { Box, Text, Flex, Spacer } from '@chakra-ui/react'
-import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
+import { Box, Flex } from '@chakra-ui/react'
+import { FaWhatsapp } from 'react-icons/fa'
 import { FiMail, FiPhone } from 'react-icons/fi'
 import Link from 'next/link'
 
@@ -25,13 +25,19 @@ const Footer = () => (
             <FaWhatsapp color='#7ad06d' />
           </Box>
         </Link>
-        <Box color='brandOrange.100'>+90 (533) 877 6057</Box>
+        <Link href='tel:+905338776057'>
+          <Box color='brandOrange.100' cursor='pointer'>
+            +90 (533) 877 6057
+          </Box>
+        </Link>
       </Flex>
       <Flex color='gray.600'>
         <Box color='gray.600' paddingTop={1} paddingRight={3}>
           <FiMail color='gray.400' />
         </Box>
-        qwertyrealestate@gmail.com
+        <Link href='mailto:qwertyrealestate@gmail.com'>
+          qwertyrealestate@gmail.com
+        </Link>
       </Flex>
     </Flex>
   </Box>
