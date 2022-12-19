@@ -20,7 +20,13 @@ const Banner = ({
   // linkName2,
 }) => (
   <Flex flexWrap='wrap' justifyContent='center' alignItems='center' m='10'>
-    <Image src={imageUrl} width={500} height={300} alt='banner' />
+    <Image
+      src={imageUrl}
+      width={500}
+      height={300}
+      alt='banner'
+      placeholder='blur'
+    />
     <Box p='5'>
       <Text color='gray.500' fontSize='sm' fontWeight='medium'>
         {purpose}
@@ -59,25 +65,7 @@ const Banner = ({
 )
 
 // JS master does through getServerSideProps()
-// export async function getServerSideProps() {
-//   const client = createClient({
-//     space: process.env.CONTENTFUL_SPACE_ID,
-//     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-//   })
-
-//   const res = await client.getEntries({
-//     content_type: 'product',
-//   })
-
-//   return {
-//     props: {
-//       products: res.items,
-//     },
-//   }
-// }
-
-//  Shaun does this way: through getStaticProps()
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
@@ -90,10 +78,29 @@ export async function getStaticProps() {
   return {
     props: {
       products: res.items,
-      revalidate: 1, // in seconds
+      revalidate: 1,
     },
   }
 }
+
+//  Shaun does this way: through getStaticProps()
+// export async function getStaticProps() {
+//   const client = createClient({
+//     space: process.env.CONTENTFUL_SPACE_ID,
+//     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+//   })
+
+//   const res = await client.getEntries({
+//     content_type: 'product',
+//   })
+
+//   return {
+//     props: {
+//       products: res.items,
+//       revalidate: 1, // in seconds
+//     },
+//   }
+// }
 
 export default function Home({ products }) {
   // console.log(products)
