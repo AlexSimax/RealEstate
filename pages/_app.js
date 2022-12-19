@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 import Layout from '../comps/Layout'
+import '../styles/globals.css'
 
 const theme = extendTheme({
   colors: {

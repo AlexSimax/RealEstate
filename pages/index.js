@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import BannerPicture from '../src/img/banner_image.jpg'
@@ -104,26 +105,41 @@ export async function getServerSideProps() {
 
 export default function Home({ products }) {
   // console.log(products)
+
   return (
-    <Box>
-      <Banner
-        purpose='КУПИТЬ ИЛИ АРЕНДОВАТЬ НЕДВИЖИМОСТЬ'
-        title1='в Северном Кипре'
-        // title2='Владеть Своим Домом Мечты'
-        desc1='Смотреть квартиры, дома'
-        desc2='и другое'
-        buttonText1='Поиск'
-        linkName1='/searchBuy'
-        // buttonText2='Арендовать'
-        // linkName2='/searchRent'
-        imageUrl={BannerPicture}
-      />
-      <Flex flexWrap='wrap'>
-        {products.map((product) => (
-          <ProductCard key={product.sys.id} product={product} />
-        ))}
-      </Flex>
-      {/* <hr /> */}
-    </Box>
+    <>
+      <Head>
+        <title>QWERTY | Дома в Северном Кипре</title>
+        <meta name='robots' content='index, follow' />
+        <meta
+          name='keywords'
+          content='Северный кипр, недвижимость на Северном кипре, недвижимость Северного Кипра, недвижимость Кипра,  недвижимость Северного Кипра от застройщика, Северный Кипр инвестиции, аренда квартиры на Северном Кипре'
+        />
+        <meta
+          name='description'
+          content='Недвижимость Северного Кипра и покупка апартаменты, виллы, квартиры, дома.'
+        />
+      </Head>
+      <Box>
+        <Banner
+          purpose='КУПИТЬ ИЛИ АРЕНДОВАТЬ НЕДВИЖИМОСТЬ'
+          title1='в Северном Кипре'
+          // title2='Владеть Своим Домом Мечты'
+          desc1='Смотреть квартиры, дома'
+          desc2='и другое'
+          buttonText1='Поиск'
+          linkName1='/searchBuy'
+          // buttonText2='Арендовать'
+          // linkName2='/searchRent'
+          imageUrl={BannerPicture}
+        />
+        <Flex flexWrap='wrap'>
+          {products.map((product) => (
+            <ProductCard key={product.sys.id} product={product} />
+          ))}
+        </Flex>
+        {/* <hr /> */}
+      </Box>
+    </>
   )
 }

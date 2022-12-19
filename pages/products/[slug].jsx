@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Box, Flex, Text } from '@chakra-ui/react'
@@ -74,64 +75,82 @@ const ProductDetails = ({ product }) => {
   const rentPay = '/ в мес.'
   const priceRu = new Intl.NumberFormat('ru').format(price)
   return (
-    <Box maxWidth='1000px' margin='auto' p='4'>
-      {featuredImage && <ImageSrollbar data={featuredImage} />}
-      <Box w='full' p='6'>
-        <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
-          <Flex alignItems='center'>
-            <Box paddingRight='3' color='green.400'>
-              {isVerified && <GoVerified />}
-            </Box>
-            <Text fontWeight='bold' fontSize='lg'>
-              £ {rent === false ? priceRu : priceRu + ' ' + rentPay}
-            </Text>
-          </Flex>
-        </Flex>
-        <Flex
-          alignItems='center'
-          p='1'
-          justifyContent='space-between'
-          w='250px'
-          color='blue.400'
-        >
-          {beds} <FaBed /> | &nbsp; &nbsp; &nbsp;{bathrooms} <FaBath /> |
-          <div>
-            &nbsp;{area} м
-            <sup>
-              <small>2</small>
-            </sup>
-          </div>
-          <BsGridFill />
-        </Flex>
-        <Box marginTop='2'>
-          <Text fontSize={['md', 'lg']} marginBottom='2' fontWeight='bold'>
-            {title}
-          </Text>
-          <Text
-            className='desc'
-            lineHeight='2'
-            color='gray.600'
-            fontSize={['sm', 'md', 'lg']}
+    <>
+      <Head>
+        <title>QWERTY | Недвижимость в Северном Кипре</title>
+        <meta name='robots' content='index, follow' />
+        <meta
+          name='keywords'
+          content='Северный кипр, недвижимость на Северном кипре, недвижимость Северного Кипра, недвижимость Кипра,  недвижимость Северного Кипра от застройщика, Северный Кипр инвестиции, аренда квартиры на Северном Кипре'
+        />
+        <meta
+          name='description'
+          content='Недвижимость Северного Кипра и покупка апартаменты, виллы, квартиры, дома.'
+        />
+      </Head>
+      <Box maxWidth='1000px' margin='auto' p='4'>
+        {featuredImage && <ImageSrollbar data={featuredImage} />}
+        <Box w='full' p='6'>
+          <Flex
+            paddingTop='2'
+            alignItems='center'
+            justifyContent='space-between'
           >
-            {documentToReactComponents(description)}
-          </Text>
-          <style jsx>
-            {`
-              h2,
-              h3 {
-                text-transform: uppercase;
-              }
-              .desc ul {
-                margin: 10px 0 10px 15px;
-              }
-              .desc li {
-                margin-left: 10px;
-              }
-            `}
-          </style>
+            <Flex alignItems='center'>
+              <Box paddingRight='3' color='green.400'>
+                {isVerified && <GoVerified />}
+              </Box>
+              <Text fontWeight='bold' fontSize='lg'>
+                £ {rent === false ? priceRu : priceRu + ' ' + rentPay}
+              </Text>
+            </Flex>
+          </Flex>
+          <Flex
+            alignItems='center'
+            p='1'
+            justifyContent='space-between'
+            w='250px'
+            color='blue.400'
+          >
+            {beds} <FaBed /> | &nbsp; &nbsp; &nbsp;{bathrooms} <FaBath /> |
+            <div>
+              &nbsp;{area} м
+              <sup>
+                <small>2</small>
+              </sup>
+            </div>
+            <BsGridFill />
+          </Flex>
+          <Box marginTop='2'>
+            <Text fontSize={['md', 'lg']} marginBottom='2' fontWeight='bold'>
+              {title}
+            </Text>
+            <Text
+              className='desc'
+              lineHeight='2'
+              color='gray.600'
+              fontSize={['sm', 'md', 'lg']}
+            >
+              {documentToReactComponents(description)}
+            </Text>
+            <style jsx>
+              {`
+                h2,
+                h3 {
+                  text-transform: uppercase;
+                }
+                .desc ul {
+                  margin: 10px 0 10px 15px;
+                }
+                .desc li {
+                  margin-left: 10px;
+                }
+              `}
+            </style>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </>
   )
 }
 

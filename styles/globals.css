@@ -15,6 +15,13 @@ a {
   box-sizing: border-box;
 }
 
+.desc ul {
+  margin: 10px 0 10px 25px;
+}
+.desc h4 {
+  margin-top: 10px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

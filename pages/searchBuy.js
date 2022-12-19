@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -12,46 +13,60 @@ const Search = ({ products }) => {
   const [searchFilters, setSearchFilters] = useState(false)
   const router = useRouter()
   return (
-    <Box>
-      <Flex
-        cursor='pointer'
-        bg='gray.100'
-        borderBottom='1px'
-        borderColor='gray.200'
-        p='2'
-        fontWeight='black'
-        fontSize='lg'
-        justifyContent='center'
-        alignItems='center'
-        onClick={() => setSearchFilters((prevFilters) => !prevFilters)}
-      >
-        <Text>Поиск по параметрам</Text>
-        <Icon paddingLeft='2' w='7' as={BsFilter}></Icon>
-      </Flex>
-      {searchFilters && <SearchFilters />}
-      <Text fontSize='2xl' p='4' fontWeight='bold'>
-        {' '}
-      </Text>
-      <Flex flexWrap='wrap'>
-        {products.map((product) => (
-          <ProductCard product={product} key={product.sys.id} />
-        ))}
-      </Flex>
-      {products.length === 0 && (
+    <>
+      <Head>
+        <title>QWERTY | Поиск дома, квартиры</title>
+        <meta name='robots' content='index, follow' />
+        <meta
+          name='keywords'
+          content='Северный кипр, недвижимость на Северном кипре, недвижимость Северного Кипра, недвижимость Кипра,  недвижимость Северного Кипра от застройщика, Северный Кипр инвестиции, аренда квартиры на Северном Кипре'
+        />
+        <meta
+          name='description'
+          content='Недвижимость Северного Кипра и покупка апартаменты, виллы, квартиры, дома.'
+        />
+      </Head>
+      <Box>
         <Flex
-          justifyContent='flex-end'
+          cursor='pointer'
+          bg='gray.100'
+          borderBottom='1px'
+          borderColor='gray.200'
+          p='2'
+          fontWeight='black'
+          fontSize='lg'
+          justifyContent='center'
           alignItems='center'
-          flexDirection='column'
-          marginTop='5'
-          marginBottom='5'
+          onClick={() => setSearchFilters((prevFilters) => !prevFilters)}
         >
-          <Image alt='no result' src={noresult} />
-          <Text fontSize='2xl' marginTop='3'>
-            Ничего не найдено
-          </Text>
+          <Text>Поиск по параметрам</Text>
+          <Icon paddingLeft='2' w='7' as={BsFilter}></Icon>
         </Flex>
-      )}
-    </Box>
+        {searchFilters && <SearchFilters />}
+        <Text fontSize='2xl' p='4' fontWeight='bold'>
+          {' '}
+        </Text>
+        <Flex flexWrap='wrap'>
+          {products.map((product) => (
+            <ProductCard product={product} key={product.sys.id} />
+          ))}
+        </Flex>
+        {products.length === 0 && (
+          <Flex
+            justifyContent='flex-end'
+            alignItems='center'
+            flexDirection='column'
+            marginTop='5'
+            marginBottom='5'
+          >
+            <Image alt='no result' src={noresult} />
+            <Text fontSize='2xl' marginTop='3'>
+              Ничего не найдено
+            </Text>
+          </Flex>
+        )}
+      </Box>
+    </>
   )
 }
 
