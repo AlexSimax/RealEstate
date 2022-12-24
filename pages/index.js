@@ -119,6 +119,10 @@ export default function Home({ products }) {
           name='description'
           content='Недвижимость Северного Кипра и покупка апартаменты, виллы, квартиры, дома.'
         />
+        <meta
+          name='google-site-verification'
+          content='6KJSOb-zGKOjKe_DqI8FzCjXwIEZ6WW0pDm3Kvnz5to'
+        />
       </Head>
       <Box>
         <Banner
